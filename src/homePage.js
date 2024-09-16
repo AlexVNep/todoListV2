@@ -1,5 +1,6 @@
 import { navContainer } from "./navBar";
 import { projectsContainer } from "./projectsNav";
+import { displayToDo } from "./createToDoContent";
 
 // Get Header
 const header = document.querySelector("#header");
@@ -14,3 +15,5 @@ copyRightText.textContent = `Copyright © Alex Nepomuceno ${year}`;
 
 export default header;
 export { copyRightText };
+
+displayToDo();
