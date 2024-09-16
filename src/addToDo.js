@@ -13,9 +13,11 @@ myTodoList[1] = todo2;
 myTodoList[2] = todo3;
 
 function addToDo() {
-  myTodoList.forEach((todo) => {
-    console.log(todo.title);
-  });
+  const todoTitle = prompt("Add your to do");
+  const newTodo = new ToDo(todoTitle);
+  myTodoList.push(newTodo);
 }
 
-export { addToDo };
+// addToDo();
+
+export { myTodoList };
