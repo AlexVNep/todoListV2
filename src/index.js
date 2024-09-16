@@ -7,6 +7,11 @@ import { container } from "./homePage";
 import { addNewTodoBtn } from "./addPage";
 import { getToDoListContainer } from "./createToDoContent";
 import { addToDo } from "./addToDo";
+import { addNewProjectBtn, getAddProjectPage } from "./addProjectsPage";
+import { projectsButton } from "./navBar";
+import { displayProject } from "./projectsNav";
+import { addProject } from "./addProjects";
+import projectsContainer from "./projectsNav";
 
 addButton.addEventListener("click", () => {
   container.replaceChildren();
@@ -19,4 +24,19 @@ addNewTodoBtn.addEventListener("click", (event) => {
   addToDo();
   container.appendChild(getToDoListContainer());
 });
+
+projectsButton.addEventListener("click", () => {
+  container.replaceChildren();
+
+  container.appendChild(getAddProjectPage());
+});
+
+addNewProjectBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  container.replaceChildren();
+  addProject();
+  container.appendChild(getToDoListContainer());
+});
+
 displayToDo();
+displayProject();
