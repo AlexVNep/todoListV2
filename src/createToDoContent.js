@@ -1,5 +1,5 @@
-import { myTodoList } from "./addToDo";
 import { container } from "./homePage";
+import { myTodoList } from "./addToDo";
 
 const todoListContainer = document.createElement("div");
 container.appendChild(todoListContainer);
