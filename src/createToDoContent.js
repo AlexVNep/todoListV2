@@ -1,6 +1,5 @@
+import { container } from "./homePage";
 import { myTodoList } from "./addToDo";
-
-const container = document.querySelector("#container");
 
 const todoListCardHeading = document.createElement("h2");
 container.appendChild(todoListCardHeading);
@@ -25,6 +24,4 @@ function displayToDo() {
   });
 }
 
-console.log(myTodoList);
-
-export { container, displayToDo };
+export { displayToDo };
