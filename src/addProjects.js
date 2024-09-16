@@ -1,4 +1,7 @@
-const myProjects = [];
+import { projectTitleInput } from "./addProjectsPage";
+import { displayProject } from "./projectsNav";
+
+let myProjects = [];
 
 function Project(title) {
   this.title = title;
@@ -13,9 +16,11 @@ myProjects[1] = project2;
 myProjects[2] = project3;
 
 function addProject() {
-  myProjects.forEach((project) => {
-    console.log(project.title);
-  });
+  myProjects = [];
+  const projectTitle = projectTitleInput.value;
+  const newProject = new Project(projectTitle);
+  myProjects.push(newProject);
+  displayProject();
 }
 
-export default addProject();
+export { addProject, myProjects };
