@@ -1,7 +1,7 @@
 const navContainer = document.createElement("nav");
 
-const inboxButton = document.createElement("button");
-inboxButton.textContent = "Inbox";
+const addButton = document.createElement("button");
+addButton.textContent = "Add To-Do";
 
 const todayButton = document.createElement("button");
 todayButton.textContent = "Today";
@@ -18,11 +18,11 @@ somedayButton.textContent = "Someday";
 const logbookButton = document.createElement("button");
 logbookButton.textContent = "Logbook";
 
-navContainer.appendChild(inboxButton);
+navContainer.appendChild(addButton);
 navContainer.appendChild(todayButton);
 navContainer.appendChild(upcomingButton);
 navContainer.appendChild(anytimeButton);
 navContainer.appendChild(somedayButton);
 navContainer.appendChild(logbookButton);
 
-export { navContainer };
+export { navContainer, addButton };
