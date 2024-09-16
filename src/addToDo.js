@@ -24,6 +24,4 @@ function addToDo() {
   console.log(todoTitle);
 }
 
-// addToDo();
-
 export { myTodoList, addToDo };
