@@ -1,4 +1,7 @@
-const myTodoList = [];
+import { todoTitleInput } from "./addPage";
+import { displayToDo } from "./createToDoContent";
+
+let myTodoList = [];
 
 function ToDo(title) {
   this.title = title;
@@ -13,11 +16,14 @@ myTodoList[1] = todo2;
 myTodoList[2] = todo3;
 
 function addToDo() {
-  const todoTitle = prompt("Add your to do");
+  myTodoList = [];
+  const todoTitle = todoTitleInput.value;
   const newTodo = new ToDo(todoTitle);
   myTodoList.push(newTodo);
+  displayToDo();
+  console.log(todoTitle);
 }
 
 // addToDo();
 
-export { myTodoList };
+export { myTodoList, addToDo };
