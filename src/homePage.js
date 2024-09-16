@@ -1,9 +1,11 @@
 import { navContainer } from "./navBar";
+import { projectsContainer } from "./projectsNav";
 
 // Get Header
 const header = document.querySelector("#header");
 
 header.appendChild(navContainer);
+document.body.appendChild(projectsContainer);
 
 //Footer copyright year
 const copyRightText = document.querySelector("#date");
