@@ -2,13 +2,13 @@ const addProjectPage = document.createElement("div");
 
 const addProjectPageHeading = document.createElement("h2");
 addProjectPageHeading.textContent = "Add A Project.";
-addProjectPage.appendChild(addPageHeading);
+addProjectPage.appendChild(addProjectPageHeading);
 
 const projectForm = document.createElement("form");
 addProjectPage.appendChild(projectForm);
 
 const projectTitleLabel = document.createElement("label");
-projectTitleLabel.textContent = "To-Do: ";
+projectTitleLabel.textContent = "Project Title: ";
 projectTitleLabel.setAttribute("for", "todo-title");
 
 const projectTitleInput = document.createElement("input");
