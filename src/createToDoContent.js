@@ -1,19 +1,19 @@
-import { container } from "./homePage";
 import { myTodoList } from "./addToDo";
+import { container } from "./homePage";
+
+const todoListContainer = document.createElement("div");
+container.appendChild(todoListContainer);
 
 const todoListCardHeading = document.createElement("h2");
-container.appendChild(todoListCardHeading);
+todoListContainer.appendChild(todoListCardHeading);
 todoListCardHeading.textContent = `General To-Do's`;
 
 const todoListCard = document.createElement("div");
 todoListCard.classList.add("todo-list-card");
-container.appendChild(todoListCard);
+todoListContainer.appendChild(todoListCard);
 
 const todoUL = document.createElement("ul");
 todoListCard.appendChild(todoUL);
-
-// const todoList = document.createElement("li");
-// todoUL.appendChild(todoList);
 
 function displayToDo() {
   myTodoList.forEach((todo) => {
@@ -24,4 +24,8 @@ function displayToDo() {
   });
 }
 
-export { displayToDo };
+function getToDoListContainer() {
+  return todoListContainer;
+}
+
+export { displayToDo, getToDoListContainer };
