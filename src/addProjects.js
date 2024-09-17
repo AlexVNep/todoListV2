@@ -16,7 +16,12 @@ function Project(title, description, dueDate, priority) {
   this.priority = priority;
 }
 
-const project1 = new Project("Fix car");
+const project1 = new Project(
+  "Fix car",
+  "Buy parts for car",
+  "07/22/2025",
+  "Low"
+);
 const project2 = new Project("Learn web development");
 const project3 = new Project("Work");
 
