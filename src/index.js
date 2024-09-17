@@ -2,10 +2,10 @@ import "./styles.css";
 import { header } from "./homePage";
 import { addButton } from "./navBar";
 import { getAddPage } from "./addPage";
-import { displayToDo } from "./createToDoContent";
+import { displayToDo } from "./toDoList";
 import { container } from "./homePage";
 import { addNewTodoBtn } from "./addPage";
-import { getToDoListContainer } from "./createToDoContent";
+import { getToDoListContainer } from "./toDoList";
 import { addToDo } from "./addToDo";
 import { addNewProjectBtn, getAddProjectPage } from "./addProjectsPage";
 import { projectsButton } from "./navBar";
@@ -40,3 +40,8 @@ addNewProjectBtn.addEventListener("click", (event) => {
 
 displayToDo();
 displayProject();
+
+// NEXT STEP
+// Add ul and li to append to each title
+// Add description to Projects constructor
+// Append description value to addProject func

@@ -1,5 +1,5 @@
 import { todoTitleInput } from "./addPage";
-import { displayToDo } from "./createToDoContent";
+import { displayToDo } from "./toDoList";
 
 let myTodoList = [];
 
