@@ -1,4 +1,4 @@
-import { projectTitleInput } from "./addProjectsPage";
+import { projectTitleInput, projectForm } from "./addProjectsPage";
 import { displayProject } from "./projectsNav";
 
 let myProjects = [];
@@ -21,6 +21,7 @@ function addProject() {
   const newProject = new Project(projectTitle);
   myProjects.push(newProject);
   displayProject();
+  projectForm.reset();
 }
 
 export { addProject, myProjects };

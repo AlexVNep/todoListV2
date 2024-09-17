@@ -27,4 +27,4 @@ function getAddProjectPage() {
   return addProjectPage;
 }
 
-export { getAddProjectPage, addNewProjectBtn, projectTitleInput };
+export { getAddProjectPage, addNewProjectBtn, projectTitleInput, projectForm };
