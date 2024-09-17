@@ -6,8 +6,8 @@ addButton.textContent = "Add To-Do";
 const projectsButton = document.createElement("button");
 projectsButton.textContent = " Add Projects";
 
-const upcomingButton = document.createElement("button");
-upcomingButton.textContent = "Upcoming";
+const homeButton = document.createElement("button");
+homeButton.textContent = "Home";
 
 const anytimeButton = document.createElement("button");
 anytimeButton.textContent = "Anytime";
@@ -20,9 +20,9 @@ logbookButton.textContent = "Logbook";
 
 navContainer.appendChild(addButton);
 navContainer.appendChild(projectsButton);
-navContainer.appendChild(upcomingButton);
+navContainer.appendChild(homeButton);
 navContainer.appendChild(anytimeButton);
 navContainer.appendChild(somedayButton);
 navContainer.appendChild(logbookButton);
 
-export { navContainer, addButton, projectsButton };
+export { navContainer, addButton, projectsButton, homeButton };
