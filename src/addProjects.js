@@ -22,8 +22,18 @@ const project1 = new Project(
   "07/22/2025",
   "Low"
 );
-const project2 = new Project("Learn web development");
-const project3 = new Project("Work");
+const project2 = new Project(
+  "Learn web development",
+  "Learn Javascript",
+  "07/22/2025",
+  "High"
+);
+const project3 = new Project(
+  "Work",
+  "Learn React and other stuff",
+  "12/25/2024",
+  "High"
+);
 
 myProjects[0] = project1;
 myProjects[1] = project2;
