@@ -1,30 +1,47 @@
-// const addPage = document.createElement("div");
+import { addToDo, myTodoList, ToDo } from "./addToDo";
+import { getToDoListContainer } from "./toDoList";
 
-// const addPageHeading = document.createElement("h2");
-// addPageHeading.textContent = "Add A To-Do.";
-// addPage.appendChild(addPageHeading);
+function getAddPage() {
+  const addPage = document.createElement("div");
 
-// const todoForm = document.createElement("form");
-// addPage.appendChild(todoForm);
+  const addPageHeading = document.createElement("h2");
+  addPageHeading.textContent = "Add A To-Do.";
+  addPage.appendChild(addPageHeading);
 
-// const todoTitleLabel = document.createElement("label");
-// todoTitleLabel.textContent = "To-Do: ";
-// todoTitleLabel.setAttribute("for", "todo-title");
+  const todoForm = document.createElement("form");
+  addPage.appendChild(todoForm);
 
-// const todoTitleInput = document.createElement("input");
-// todoTitleInput.setAttribute("id", "todo-title");
-// todoTitleInput.setAttribute("type", "text");
+  const todoTitleLabel = document.createElement("label");
+  todoTitleLabel.textContent = "To-Do: ";
+  todoTitleLabel.setAttribute("for", "todo-title");
 
-// const addNewTodoBtn = document.createElement("button");
-// addNewTodoBtn.textContent = "+";
-// addNewTodoBtn.setAttribute("type", "submit");
+  const todoTitleInput = document.createElement("input");
+  todoTitleInput.setAttribute("id", "todo-title");
+  todoTitleInput.setAttribute("type", "text");
 
-// todoForm.appendChild(todoTitleLabel);
-// todoForm.appendChild(todoTitleInput);
-// todoForm.appendChild(addNewTodoBtn);
+  const addNewTodoButton = document.createElement("button");
+  addNewTodoButton.setAttribute("id", "new-todo-btn");
+  addNewTodoButton.textContent = "+";
+  addNewTodoButton.setAttribute("type", "submit");
 
-// function getAddPage() {
-//   return addPage;
-// }
+  addNewTodoButton.addEventListener("click", (event) => {
+    const container = document.getElementById("content-container");
+    console.log("Add new todo button works");
+    event.preventDefault();
 
-// export { getAddPage, addNewTodoBtn, todoTitleInput };
+    const todoTitle = todoTitleInput.value;
+    const newTodo = new ToDo(todoTitle);
+    myTodoList.push(newTodo);
+    console.log(todoTitle);
+
+    container.replaceChildren();
+    container.appendChild(getToDoListContainer());
+  });
+
+  todoForm.appendChild(todoTitleLabel);
+  todoForm.appendChild(todoTitleInput);
+  todoForm.appendChild(addNewTodoButton);
+  return addPage;
+}
+
+export { getAddPage };

@@ -1,5 +1,7 @@
 import "./styles.css";
 import { getHomePage } from "./homePage";
+import { getAddPage } from "./addPage";
+import { getToDoListContainer } from "./toDoList";
 
 // import { addButton, homeButton, projectsButton } from "./headerNavBar";
 // import { getAddPage, addNewTodoBtn } from "./addPage";
@@ -11,17 +13,21 @@ import { getHomePage } from "./homePage";
 
 getHomePage();
 
-// addButton.addEventListener("click", () => {
-//   container.replaceChildren();
-//   container.appendChild(getAddPage());
-// });
+const container = document.getElementById("content-container");
 
-// addNewTodoBtn.addEventListener("click", (event) => {
-//   event.preventDefault();
-//   container.replaceChildren();
-//   addToDo();
-//   container.appendChild(getToDoListContainer());
-// });
+const homeBtn = document.getElementById("home-btn");
+homeBtn.addEventListener("click", () => {
+  console.log("Home button works");
+  container.replaceChildren();
+  container.appendChild(getToDoListContainer());
+});
+
+const addBtn = document.getElementById("add-btn");
+addBtn.addEventListener("click", () => {
+  console.log("Add button works");
+  container.replaceChildren();
+  container.appendChild(getAddPage());
+});
 
 // projectsButton.addEventListener("click", () => {
 //   container.replaceChildren();
@@ -33,11 +39,6 @@ getHomePage();
 //   event.preventDefault();
 //   container.replaceChildren();
 //   addProject();
-//   container.appendChild(getToDoListContainer());
-// });
-
-// homeButton.addEventListener("click", () => {
-//   container.replaceChildren();
 //   container.appendChild(getToDoListContainer());
 // });
 

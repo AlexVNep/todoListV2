@@ -1,4 +1,5 @@
 import { getHeaderNavBar } from "./headerNavBar";
+import { getToDoListContainer } from "./toDoList";
 
 function getHomePage() {
   // Get Header
@@ -18,9 +19,7 @@ function getHomePage() {
 
   //Get Content Container
   const contentContainer = document.querySelector("#content-container");
-  const contentContainerHeading = document.createElement("h2");
-  contentContainerHeading.textContent = "Content";
-  contentContainer.appendChild(contentContainerHeading);
+  contentContainer.appendChild(getToDoListContainer());
 
   //Footer copyright year
   const copyRightText = document.querySelector("#date");

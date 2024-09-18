@@ -1,31 +1,30 @@
-// import { container } from "./homePage";
-// import { myTodoList } from "./addToDo";
+import { myTodoList, addToDo } from "./addToDo";
 
-// const todoListContainer = document.createElement("div");
-// container.appendChild(todoListContainer);
+addToDo(); //Need this for the list to show
 
-// const todoListCardHeading = document.createElement("h2");
-// todoListContainer.appendChild(todoListCardHeading);
-// todoListCardHeading.textContent = `General To-Do's`;
+function getToDoListContainer() {
+  const todoListContainer = document.createElement("div");
+  todoListContainer.setAttribute("id", "todo-list-container");
 
-// const todoListCard = document.createElement("div");
-// todoListCard.classList.add("todo-list-card");
-// todoListContainer.appendChild(todoListCard);
+  const todoListCardHeading = document.createElement("h2");
+  todoListContainer.appendChild(todoListCardHeading);
+  todoListCardHeading.textContent = `General To-Do's`;
 
-// const todoUL = document.createElement("ul");
-// todoListCard.appendChild(todoUL);
+  const todoListCard = document.createElement("div");
+  todoListCard.classList.add("todo-list-card");
+  todoListContainer.appendChild(todoListCard);
 
-// function displayToDo() {
-//   myTodoList.forEach((todo) => {
-//     const todoList = document.createElement("li");
-//     todoUL.appendChild(todoList);
-//     todoList.textContent = todo.title;
-//     console.log(todo.title);
-//   });
-// }
+  const todoUL = document.createElement("ul");
+  todoListCard.appendChild(todoUL);
 
-// function getToDoListContainer() {
-//   return todoListContainer;
-// }
+  myTodoList.forEach((todo) => {
+    const todoList = document.createElement("li");
+    todoUL.appendChild(todoList);
+    todoList.textContent = todo.title;
+    console.log(todo.title);
+  });
 
-// export { displayToDo, getToDoListContainer };
+  return todoListContainer;
+}
+
+export { getToDoListContainer };
