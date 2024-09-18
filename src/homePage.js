@@ -1,5 +1,6 @@
 import { getHeaderNavBar } from "./headerNavBar";
 import { getToDoListContainer } from "./toDoList";
+import { getProjectsContainer } from "./projectsListContainer";
 
 function getHomePage() {
   // Get Header
@@ -8,14 +9,11 @@ function getHomePage() {
   heading.textContent = "My To-Do App";
   header.appendChild(heading);
 
-  //   const navContainer2 = document.getElementById("#nav-container");
   header.appendChild(getHeaderNavBar());
 
   //Get Projects Container
   const projectsContainer = document.querySelector("#projects-container");
-  const projectsContainerHeading = document.createElement("h2");
-  projectsContainerHeading.textContent = "Projects";
-  projectsContainer.appendChild(projectsContainerHeading);
+  projectsContainer.appendChild(getProjectsContainer());
 
   //Get Content Container
   const contentContainer = document.querySelector("#content-container");
