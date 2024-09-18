@@ -2,6 +2,7 @@ import "./styles.css";
 import { getHomePage } from "./homePage";
 import { getAddPage } from "./addPage";
 import { getToDoListContainer } from "./toDoList";
+import { getAddProjectPage } from "./addProjectsPage";
 
 // import { addButton, homeButton, projectsButton } from "./headerNavBar";
 // import { getAddPage, addNewTodoBtn } from "./addPage";
@@ -29,11 +30,11 @@ addBtn.addEventListener("click", () => {
   container.appendChild(getAddPage());
 });
 
-// projectsButton.addEventListener("click", () => {
-//   container.replaceChildren();
-
-//   container.appendChild(getAddProjectPage());
-// });
+const addProjectBtn = document.getElementById("add-project-btn");
+addProjectBtn.addEventListener("click", () => {
+  container.replaceChildren();
+  container.appendChild(getAddProjectPage());
+});
 
 // addNewProjectBtn.addEventListener("click", (event) => {
 //   event.preventDefault();
