@@ -45,6 +45,7 @@ function getProjectsContainer() {
         const taskCard = document.createElement("div");
         const taskInput = document.createElement("input");
         const taskButton = document.createElement("button");
+        taskButton.setAttribute("id", "add-task-btn");
         taskButton.textContent = "Add Task";
         container.appendChild(taskCard);
         taskCard.appendChild(taskInput);
