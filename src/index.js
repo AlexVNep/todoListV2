@@ -1,45 +1,48 @@
 import "./styles.css";
-import { header, container } from "./homePage";
-import { addButton, homeButton, projectsButton } from "./navBar";
-import { getAddPage, addNewTodoBtn } from "./addPage";
-import { displayToDo, getToDoListContainer } from "./toDoList";
-import { addToDo } from "./addToDo";
-import { addNewProjectBtn, getAddProjectPage } from "./addProjectsPage";
-import { displayProject, projectsContainer } from "./projectsNav";
-import { addProject } from "./addProjects";
+import { getHomePage } from "./homePage";
 
-addButton.addEventListener("click", () => {
-  container.replaceChildren();
-  container.appendChild(getAddPage());
-});
+// import { addButton, homeButton, projectsButton } from "./headerNavBar";
+// import { getAddPage, addNewTodoBtn } from "./addPage";
+// import { displayToDo, getToDoListContainer } from "./toDoList";
+// import { addToDo } from "./addToDo";
+// import { addNewProjectBtn, getAddProjectPage } from "./addProjectsPage";
+// import { displayProject, projectsContainer } from "./projectsNav";
+// import { addProject } from "./addProjects";
 
-addNewTodoBtn.addEventListener("click", (event) => {
-  event.preventDefault();
-  container.replaceChildren();
-  addToDo();
-  container.appendChild(getToDoListContainer());
-});
+getHomePage();
 
-projectsButton.addEventListener("click", () => {
-  container.replaceChildren();
+// addButton.addEventListener("click", () => {
+//   container.replaceChildren();
+//   container.appendChild(getAddPage());
+// });
 
-  container.appendChild(getAddProjectPage());
-});
+// addNewTodoBtn.addEventListener("click", (event) => {
+//   event.preventDefault();
+//   container.replaceChildren();
+//   addToDo();
+//   container.appendChild(getToDoListContainer());
+// });
 
-addNewProjectBtn.addEventListener("click", (event) => {
-  event.preventDefault();
-  container.replaceChildren();
-  addProject();
-  container.appendChild(getToDoListContainer());
-});
+// projectsButton.addEventListener("click", () => {
+//   container.replaceChildren();
 
-homeButton.addEventListener("click", () => {
-  container.replaceChildren();
-  container.appendChild(getToDoListContainer());
-});
+//   container.appendChild(getAddProjectPage());
+// });
 
-displayToDo();
-displayProject();
+// addNewProjectBtn.addEventListener("click", (event) => {
+//   event.preventDefault();
+//   container.replaceChildren();
+//   addProject();
+//   container.appendChild(getToDoListContainer());
+// });
+
+// homeButton.addEventListener("click", () => {
+//   container.replaceChildren();
+//   container.appendChild(getToDoListContainer());
+// });
+
+// displayToDo();
+// displayProject();
 
 // NEXT STEP
 // Add ul and li to append to each title
