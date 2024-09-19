@@ -22,6 +22,13 @@ function getToDoListContainer() {
     todoUL.appendChild(todoList);
     todoList.textContent = todo.title;
     console.log(todo.title);
+    todoList.addEventListener("click", () => {
+      if (todoList.style.textDecoration === "line-through") {
+        todoList.style.textDecoration = "none";
+      } else {
+        todoList.style = "text-decoration: line-through";
+      }
+    });
   });
 
   return todoListContainer;
