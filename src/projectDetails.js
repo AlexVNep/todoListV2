@@ -1,4 +1,7 @@
 import { addProject, myProjects } from "./addProjects";
+// import { getProjectsContainer } from "./projectsListContainer";
+
+// getProjectsContainer();
 
 function showAllProjects() {
   const container = document.getElementById("content-container");
@@ -11,7 +14,7 @@ function showAllProjects() {
   allProjectsHeading.textContent = "All Projects";
   allProjectsDiv.appendChild(allProjectsHeading);
 
-  myProjects.forEach((project) => {
+  myProjects.forEach((project, index) => {
     const projectCard = document.createElement("div");
     allProjectsDiv.appendChild(projectCard);
 
@@ -35,6 +38,15 @@ function showAllProjects() {
     projectCard.appendChild(ProjectCardDueDate);
     projectCard.appendChild(projectCardPriority);
     projectCard.appendChild(projectCardDeleteButton);
+
+    projectCardDeleteButton.addEventListener("click", () => {
+      const projectListToDelete = document.getElementById(`Button${[index]}`);
+      allProjectsDiv.removeChild(projectCard);
+      if (projectListToDelete.parentNode) {
+        projectListToDelete.parentNode.removeChild(projectListToDelete);
+      }
+      console.log(projectListToDelete.textContent);
+    });
   });
 
   console.log(myProjects);
