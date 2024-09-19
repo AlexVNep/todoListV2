@@ -14,8 +14,9 @@ function getHeaderNavBar() {
   addProjectButton.setAttribute("id", "add-project-btn");
   addProjectButton.textContent = " Add Projects";
 
-  //   const anytimeButton = document.createElement("button");
-  //   anytimeButton.textContent = "Anytime";
+  const seeProjectsButton = document.createElement("button");
+  seeProjectsButton.setAttribute("id", "see-projects-btn");
+  seeProjectsButton.textContent = "All Projects";
 
   //   const somedayButton = document.createElement("button");
   //   somedayButton.textContent = "Someday";
@@ -26,8 +27,7 @@ function getHeaderNavBar() {
   navContainer.appendChild(homeButton);
   navContainer.appendChild(addButton);
   navContainer.appendChild(addProjectButton);
-
-  //   navContainer.appendChild(anytimeButton);
+  navContainer.appendChild(seeProjectsButton);
   //   navContainer.appendChild(somedayButton);
   //   navContainer.appendChild(logbookButton);
   return navContainer;

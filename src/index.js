@@ -28,3 +28,8 @@ addProjectBtn.addEventListener("click", () => {
   container.replaceChildren();
   container.appendChild(getAddProjectPage());
 });
+
+const seeProjectsBtn = document.getElementById("see-projects-btn");
+seeProjectsBtn.addEventListener("click", () => {
+  console.log("See ALL PROJECT CARDS button");
+});
