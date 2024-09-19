@@ -1,33 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Thasadith&display=swap");
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-body {
+html {
   display: grid;
-  grid-template-columns: 1fr 6fr;
-  grid-template-rows: 1fr 5fr 1fr;
+  min-height: 100%;
+  font-family: "Thasadith", sans-serif;
+}
+
+body {
+  background-image: linear-gradient(
+    175deg,
+    rgb(64, 64, 119) 0%,
+    dodgerblue 35%,
+    skyblue 50%,
+    gold 50%,
+    rgb(252, 186, 63) 51%
+  );
+  display: grid;
+  grid-template-columns: 1.5fr 5fr;
+  grid-template-rows: 1fr 6fr 1fr;
 }
 
 header {
-  border: 3px solid red;
   grid-column: 1 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
 }
 
-.projects-nav {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
+header h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  background-image: linear-gradient(45deg, deeppink, orange);
+  color: transparent;
+  background-clip: text;
+  background-clip: text;
 }
 
-#container {
-  border: 3px solid black;
+#nav-container > button {
+  padding: 0.75rem 1rem;
+  margin-right: 0.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-image: linear-gradient(100deg, #d4f1ff, #d6c578);
+  border-radius: 0.375rem;
+}
+
+#projects-container,
+#content-container {
+  border-radius: 0.375rem;
+  background-image: linear-gradient(100deg, #d4f1ff, #d6c578);
+  color: #1a150e;
+  transition: 0.3s linear;
+  border: 1px solid #1a150e;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#projects-nav,
+#todo-list-container {
+  margin: 2rem;
+}
+
+#projects-container ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+#projects-container li {
+  padding: 5px;
+}
+
+#content-container {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
 
+#content-container > div {
+  margin: 2rem;
+  line-height: 2;
+}
+
+#content-container ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+#todo-list-container {
+  line-height: 2;
+}
+
+#all-projects-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+#all-projects-div > h2 {
+  grid-column: 1 / 4;
+}
+
+#all-projects-div > div {
+  border: 2px solid rgb(167, 167, 167);
+  background-image: linear-gradient(45deg, #bae8ff, #d6c578);
+  width: 220px;
+  gap: 10px;
+  padding: 10px;
+  line-height: 2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+select {
+  border: none;
+  outline: none;
+  height: 30px;
+  vertical-align: middle;
+  border-radius: 22px;
+  width: 200px;
+  padding: 0 18px;
+}
+
+form > button,
+#add-task-btn {
+  padding: 0.75rem 1rem;
+  margin: 0.5rem;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-image: linear-gradient(100deg, #d4f1ff, #d6c578);
+  border-radius: 0.375rem;
+  width: 3rem;
+}
+
+#add-task-btn {
+  padding-right: 3rem;
+}
+
+#all-projects-div > div > button {
+  background-image: linear-gradient(
+    175deg,
+    rgb(64, 64, 119) 0%,
+    dodgerblue 35%,
+    skyblue 50%,
+    gold 50%,
+    rgb(252, 186, 63) 51%
+  );
+  padding: 0.75rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 0.375rem;
+}
+
 footer {
-  border: 3px solid green;
   grid-column: 1 / 3;
   grid-row: 3 / 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
 }
