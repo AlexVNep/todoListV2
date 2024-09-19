@@ -3,6 +3,7 @@ import { getHomePage } from "./homePage";
 import { getAddPage } from "./addPage";
 import { getToDoListContainer } from "./toDoList";
 import { getAddProjectPage } from "./addProjectsPage";
+import { showAllProjects } from "./projectDetails";
 
 getHomePage();
 
@@ -32,4 +33,6 @@ addProjectBtn.addEventListener("click", () => {
 const seeProjectsBtn = document.getElementById("see-projects-btn");
 seeProjectsBtn.addEventListener("click", () => {
   console.log("See ALL PROJECT CARDS button");
+  container.replaceChildren();
+  container.appendChild(showAllProjects());
 });
