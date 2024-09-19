@@ -1,4 +1,6 @@
-import { myProjects } from "./addProjects";
+import { myProjects, addProject } from "./addProjects";
+
+addProject();
 
 function getProjectsContainer() {
   const projectsListContainer = document.createElement("div");
