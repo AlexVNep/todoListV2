@@ -31,7 +31,7 @@ function getAddPage() {
 
     const todoTitle = todoTitleInput.value;
     const newTodo = new ToDo(todoTitle);
-    myTodoList.push(newTodo);
+    myTodoList.unshift(newTodo);
     console.log(todoTitle);
 
     container.replaceChildren();
