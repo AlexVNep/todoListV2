@@ -1,6 +1,3 @@
-import { getAddPage } from "./addPage";
-// import { displayToDo } from "./toDoList";
-
 let myTodoList = [];
 
 class ToDo {
@@ -17,12 +14,6 @@ function addToDo() {
   myTodoList[0] = todo1;
   myTodoList[1] = todo2;
   myTodoList[2] = todo3;
-
-  //   myTodoList = [];
-  //   const todoTitle = todoTitleInput.value;
-  //   const newTodo = new ToDo(todoTitle);
-  //   myTodoList.push(newTodo);
-  //   console.log(todoTitle);
 }
 
 export { myTodoList, addToDo, ToDo };
