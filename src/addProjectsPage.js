@@ -1,3 +1,6 @@
+import { myProjects, Project } from "./addProjects";
+import { getProjectsContainer } from "./projectsListContainer";
+
 function getAddProjectPage() {
   const addProjectPage = document.createElement("div");
 
@@ -53,6 +56,32 @@ function getAddProjectPage() {
   const addNewProjectBtn = document.createElement("button");
   addNewProjectBtn.textContent = "+";
   addNewProjectBtn.setAttribute("type", "submit");
+
+  addNewProjectBtn.addEventListener("click", (event) => {
+    const container = document.getElementById("content-container");
+    console.log("Add NEW PROJECT to project list works");
+    event.preventDefault();
+
+    const projectTitle = projectTitleInput.value;
+    const projectDescription = projectDescriptionInput.value;
+    const projectDueDate = projectDueDateInput.value;
+    const projectPriority = projectPriorityInput.value;
+    const newProject = new Project(
+      projectTitle,
+      projectDescription,
+      projectDueDate,
+      projectPriority
+    );
+    myProjects.push(newProject);
+    projectForm.reset();
+    console.log(newProject);
+
+    container.replaceChildren();
+    container.appendChild(getProjectsContainer());
+    const projCont = document.getElementById("projects-container");
+    projCont.replaceChildren();
+    projCont.appendChild(getProjectsContainer());
+  });
 
   projectForm.appendChild(projectTitleLabel);
   projectForm.appendChild(projectTitleInput);
