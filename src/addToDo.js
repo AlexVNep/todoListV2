@@ -1,5 +1,9 @@
 let myTodoList = [];
 
+function setMyTodoList(value) {
+  myTodoList = value;
+}
+
 class ToDo {
   constructor(title) {
     this.title = title;
@@ -16,4 +20,4 @@ function addToDo() {
   myTodoList[2] = todo3;
 }
 
-export { myTodoList, addToDo, ToDo };
+export { myTodoList, addToDo, ToDo, setMyTodoList };
