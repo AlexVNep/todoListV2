@@ -73,6 +73,7 @@ function getAddProjectPage() {
       projectPriority
     );
     myProjects.push(newProject);
+    localStorage.setItem("getProject", JSON.stringify(myProjects));
     projectForm.reset();
     console.log(newProject);
 
