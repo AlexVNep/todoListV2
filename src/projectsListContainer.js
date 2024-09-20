@@ -1,5 +1,6 @@
 import { myProjects, addProject } from "./addProjects";
 
+let projectTodo = [];
 addProject();
 
 function getProjectsContainer() {
@@ -52,10 +53,12 @@ function getProjectsContainer() {
         container.appendChild(taskCard);
         taskCard.appendChild(taskInput);
         taskCard.appendChild(taskButton);
-
         taskButton.addEventListener("click", () => {
           const taskDiv = document.createElement("div");
           taskDiv.textContent = taskInput.value;
+
+          projectTodo.push(taskInput.value);
+          localStorage.setItem("getProjectsTodo", JSON.stringify(projectTodo));
 
           container.appendChild(taskDiv);
           container.removeChild(taskCard);
@@ -73,4 +76,8 @@ function getProjectsContainer() {
   return projectsListContainer;
 }
 
-export { getProjectsContainer };
+function setmyGetProjectsTodo(value) {
+  projectTodo = value;
+}
+
+export { getProjectsContainer, setmyGetProjectsTodo, projectTodo };
