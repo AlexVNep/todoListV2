@@ -32,6 +32,7 @@ function getAddPage() {
     const todoTitle = todoTitleInput.value;
     const newTodo = new ToDo(todoTitle);
     myTodoList.unshift(newTodo);
+    localStorage.setItem("todoList", JSON.stringify(myTodoList));
     console.log(todoTitle);
 
     container.replaceChildren();
