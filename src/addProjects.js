@@ -1,5 +1,9 @@
 let myProjects = [];
 
+function setMyGetProject(value) {
+  myProjects = value;
+}
+
 class Project {
   constructor(title, description, dueDate, priority) {
     this.title = title;
@@ -34,4 +38,4 @@ function addProject() {
   myProjects[2] = project3;
 }
 
-export { addProject, myProjects, Project };
+export { addProject, myProjects, Project, setMyGetProject };
