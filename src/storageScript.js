@@ -1,5 +1,6 @@
 import { myTodoList, setMyTodoList } from "./addToDo";
 import { myProjects, setMyGetProject } from "./addProjects";
+import { setmyGetProjectsTodo } from "./projectsListContainer";
 
 function storageAvailable(type) {
   let storage;
@@ -30,6 +31,7 @@ function storageCheck() {
     console.log("I am in storage");
     getList();
     getProject();
+    getProjectsTodo();
   }
 }
 
@@ -37,7 +39,7 @@ function getList() {
   let todoList = JSON.parse(localStorage.getItem("todoList")); //All items must be use this key
 
   if (!todoList) {
-    todoList = [];
+    todoList = myTodoList;
   }
   setMyTodoList(todoList);
 }
@@ -46,9 +48,19 @@ function getProject() {
   let getProject = JSON.parse(localStorage.getItem("getProject"));
 
   if (!getProject) {
-    getProject = [];
+    getProject = myProjects;
   }
   setMyGetProject(getProject);
+}
+
+function getProjectsTodo() {
+  let getProjectsTodo = JSON.parse(localStorage.getItem("getProjectsTodo"));
+
+  if (!getProjectsTodo) {
+    getProjectsTodo = [];
+  }
+
+  setmyGetProjectsTodo(getProjectsTodo);
 }
 
 export { storageAvailable, storageCheck };
