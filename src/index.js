@@ -4,12 +4,9 @@ import { getAddPage } from "./addPage";
 import { getToDoListContainer } from "./toDoList";
 import { getAddProjectPage } from "./addProjectsPage";
 import { showAllProjects } from "./projectDetails";
-import {
-  populateStorage,
-  storageAvailable,
-  storageCheck,
-} from "../storageScript";
+import { storageAvailable, storageCheck } from "./storageScript";
 import { myTodoList } from "./addToDo";
+import { myProjects } from "./addProjects";
 
 if (storageAvailable("localStorage")) {
   console.log("Yippee! We can use localStorage awesomeness");
@@ -51,4 +48,5 @@ seeProjectsBtn.addEventListener("click", () => {
   container.appendChild(showAllProjects());
 });
 
-myTodoList.onchange = populateStorage;
+myTodoList.onchange = storageCheck;
+myProjects.onChange = storageCheck;
