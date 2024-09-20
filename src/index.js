@@ -4,6 +4,20 @@ import { getAddPage } from "./addPage";
 import { getToDoListContainer } from "./toDoList";
 import { getAddProjectPage } from "./addProjectsPage";
 import { showAllProjects } from "./projectDetails";
+import {
+  populateStorage,
+  storageAvailable,
+  storageCheck,
+} from "../storageScript";
+import { myTodoList } from "./addToDo";
+
+if (storageAvailable("localStorage")) {
+  console.log("Yippee! We can use localStorage awesomeness");
+} else {
+  console.log("Too bad, no localStorage for us");
+}
+
+storageCheck();
 
 getHomePage();
 
@@ -36,3 +50,5 @@ seeProjectsBtn.addEventListener("click", () => {
   container.replaceChildren();
   container.appendChild(showAllProjects());
 });
+
+myTodoList.onchange = populateStorage;
