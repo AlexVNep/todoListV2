@@ -1,6 +1,5 @@
 import { myProjects, addProject } from "./addProjects";
 
-let projectTodo = [];
 addProject();
 
 function getProjectsContainer() {
@@ -28,6 +27,7 @@ function getProjectsContainer() {
     projectList.addEventListener("click", () => {
       const container = document.getElementById("content-container");
       container.replaceChildren();
+
       const clickedProjectCard = document.createElement("div");
       const projectTitle = document.createElement("h2");
       projectTitle.textContent = project.title;
@@ -44,24 +44,30 @@ function getProjectsContainer() {
       const addProjectToDoButton = document.createElement("button");
       addProjectToDoButton.textContent = "Add Tasks";
 
+      const taskDiv = document.createElement("div");
+      const taskItems = project.tasks();
+
       addProjectToDoButton.addEventListener("click", () => {
         const taskCard = document.createElement("div");
         const taskInput = document.createElement("input");
+        taskInput.setAttribute("id", "task-input");
+
         const taskButton = document.createElement("button");
         taskButton.setAttribute("id", "add-task-btn");
         taskButton.textContent = "Add Task";
         container.appendChild(taskCard);
         taskCard.appendChild(taskInput);
         taskCard.appendChild(taskButton);
-        taskButton.addEventListener("click", () => {
-          const taskDiv = document.createElement("div");
-          taskDiv.textContent = taskInput.value;
+        taskButton.addEventListener("click", (event) => {
+          event.preventDefault();
+          const newTask = document.getElementById("task-p");
+          const taskTodoTitle = taskInput.value;
+          newTask.textContent = taskTodoTitle;
 
-          projectTodo.push(taskInput.value);
-          localStorage.setItem("getProjectsTodo", JSON.stringify(projectTodo));
+          // newTask.appendChild(taskTodoTitle);
 
-          container.appendChild(taskDiv);
           container.removeChild(taskCard);
+          clickedProjectCard.appendChild(newTask);
         });
       });
 
@@ -71,13 +77,18 @@ function getProjectsContainer() {
       clickedProjectCard.appendChild(projectDueDate);
       clickedProjectCard.appendChild(projectPriority);
       clickedProjectCard.appendChild(addProjectToDoButton);
+
+      taskItems.forEach((item) => {
+        const taskP = document.createElement("p");
+        taskP.setAttribute("id", "task-p");
+        taskP.textContent = item;
+        console.log(taskP);
+        taskDiv.appendChild(taskP);
+        clickedProjectCard.appendChild(taskDiv);
+      });
     });
   });
   return projectsListContainer;
 }
 
-function setmyGetProjectsTodo(value) {
-  projectTodo = value;
-}
-
-export { getProjectsContainer, setmyGetProjectsTodo, projectTodo };
+export { getProjectsContainer };

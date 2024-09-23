@@ -1,4 +1,4 @@
-import { addToDo, myTodoList, ToDo } from "./addToDo";
+import { myTodoList, ToDo } from "./addToDo";
 import { getToDoListContainer } from "./toDoList";
 
 function getAddPage() {

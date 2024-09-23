@@ -53,6 +53,8 @@ function getAddProjectPage() {
   optionHigh.textContent = "High";
   optionHigh.setAttribute("value", "High");
 
+  const taskInput = document.getElementById("task-input");
+
   const addNewProjectBtn = document.createElement("button");
   addNewProjectBtn.textContent = "+";
   addNewProjectBtn.setAttribute("type", "submit");
@@ -66,11 +68,13 @@ function getAddProjectPage() {
     const projectDescription = projectDescriptionInput.value;
     const projectDueDate = projectDueDateInput.value;
     const projectPriority = projectPriorityInput.value;
+    const taskInputTitle = taskInput.value;
     const newProject = new Project(
       projectTitle,
       projectDescription,
       projectDueDate,
-      projectPriority
+      projectPriority,
+      taskInputTitle
     );
     myProjects.push(newProject);
     localStorage.setItem("getProject", JSON.stringify(myProjects));

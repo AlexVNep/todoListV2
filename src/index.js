@@ -7,7 +7,6 @@ import { showAllProjects } from "./projectDetails";
 import { storageAvailable, storageCheck } from "./storageScript";
 import { myTodoList } from "./addToDo";
 import { myProjects } from "./addProjects";
-import { projectTodo } from "./projectsListContainer";
 
 if (storageAvailable("localStorage")) {
   console.log("Yippee! We can use localStorage awesomeness");
@@ -51,4 +50,3 @@ seeProjectsBtn.addEventListener("click", () => {
 
 myTodoList.onchange = storageCheck;
 myProjects.onChange = storageCheck;
-projectTodo.onchange = storageCheck;
