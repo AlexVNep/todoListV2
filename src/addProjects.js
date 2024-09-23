@@ -1,4 +1,5 @@
 let myProjects = [];
+let projectTodoList = [];
 
 function setMyGetProject(value) {
   myProjects = value;
@@ -36,6 +37,18 @@ function addProject() {
   myProjects[0] = project1;
   myProjects[1] = project2;
   myProjects[2] = project3;
+}
+
+class ProjectTodoList {
+  constructor(title) {
+    this.title = title;
+  }
+}
+
+function addProjectList() {
+  const projectList1 = new ProjectTodoList("Idler arm");
+
+  projectTodoList[0] = projectList1;
 }
 
 export { addProject, myProjects, Project, setMyGetProject };
